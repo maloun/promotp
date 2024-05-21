@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 21 2024 г., 19:09
+-- Время создания: Май 21 2024 г., 20:23
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.1.9
 
@@ -37,7 +37,7 @@ CREATE TABLE `clients` (
   `contact_phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
   `inn` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `username` varchar(45) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `chat_id` bigint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -46,7 +46,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id_client`, `first_name`, `middle_name`, `last_name`, `deleted`, `company_name`, `contact_phone`, `email`, `inn`, `username`, `chat_id`) VALUES
-(1, 'John', 'Doe', 'Smith', 0, 'ООО \"Ромашка\"', '88005553500', 'example@go.com', '8878787878787', '', 0),
+(1, 'John', 'Doe', 'Smith', 0, 'ООО \"Ромашка\"', '88005553500', 'example@go.com', '8878787878787', 'danyabroyk', 5204558204),
 (2, 'Alice', 'Jane', 'Johnson', 0, NULL, NULL, NULL, NULL, '', 0),
 (3, 'Bob', 'Michael', 'Brown', 0, 'ООО \"Бебра\"', '', '', '', '', 0),
 (19, 'ыва', 'ыва', 'ыва', 0, 'ыва', 'ыва', 'ыва', 'ыва', '', 0);
@@ -135,8 +135,8 @@ INSERT INTO `configurations` (`id`, `name`) VALUES
 
 CREATE TABLE `equipments` (
   `id` int NOT NULL,
-  `name` text COLLATE utf8mb4_general_ci,
-  `description` text COLLATE utf8mb4_general_ci
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -207,7 +207,7 @@ INSERT INTO `marks` (`id_mark`, `name`) VALUES
 CREATE TABLE `messages` (
   `id_messages` int NOT NULL,
   `contact_id` int NOT NULL,
-  `sender_id` int NOT NULL,
+  `sender_id` int DEFAULT NULL,
   `message` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `deleted` tinyint(1) DEFAULT '0'
@@ -218,9 +218,8 @@ CREATE TABLE `messages` (
 --
 
 INSERT INTO `messages` (`id_messages`, `contact_id`, `sender_id`, `message`, `time`, `deleted`) VALUES
-(1, 1, 36, 'Hello John!', '2024-01-14 16:05:31', 0),
-(2, 2, 36, 'Hi Alice!', '2024-01-14 16:05:31', 0),
-(3, 3, 36, 'Hey Bob!', '2024-01-14 16:05:31', 0);
+(6, 1, NULL, 'asd', '2024-05-21 17:19:16', 0),
+(7, 1, 36, 'asd', '2024-05-21 17:19:24', 0);
 
 -- --------------------------------------------------------
 
@@ -268,7 +267,7 @@ INSERT INTO `model&equip` (`id`, `model_id`, `equipment_id`) VALUES
 
 CREATE TABLE `models` (
   `id` int NOT NULL,
-  `name` text COLLATE utf8mb4_general_ci
+  `name` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -288,7 +287,7 @@ CREATE TABLE `products` (
   `id` int NOT NULL,
   `configuration_id` int DEFAULT NULL,
   `series` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
-  `ip` text COLLATE utf8mb4_general_ci,
+  `ip` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci,
   `release_date` date DEFAULT NULL,
   `client_id` int DEFAULT NULL,
   `model_id` int DEFAULT NULL
@@ -351,7 +350,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `login`, `first_name`, `last_name`, `middle_name`, `email`, `password`, `session_id`, `deleted`, `creation_time`, `last_login_time`) VALUES
-(36, 'Ivan', '', '', '', '', '$2y$10$ZctuqY4nBrQ7F61GHZ2/xOP8JIsBmZUNtXBM7qjM1me6VTX5FemYG', 'b1d6bdfaedbd1089d1d1284692dca4f1', 0, '2024-03-05 20:00:31', '2024-05-21 09:06:10'),
+(36, 'Ivan', '', '', '', '', '$2y$10$ZctuqY4nBrQ7F61GHZ2/xOP8JIsBmZUNtXBM7qjM1me6VTX5FemYG', '02c8e451689159d60efc7320ddd013f7', 0, '2024-03-05 20:00:31', '2024-05-21 19:20:08'),
 (43, 'Roma', NULL, NULL, NULL, NULL, '$2y$10$.wWNfkWBuTUPqf.uXIVjIunsm7NVEeqJYCueTwLhsjJBNuHDbOG1a', '', 0, '2024-03-09 13:31:47', NULL);
 
 --
@@ -509,7 +508,7 @@ ALTER TABLE `marks`
 -- AUTO_INCREMENT для таблицы `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id_messages` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_messages` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `model&config`
