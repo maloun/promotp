@@ -260,9 +260,6 @@ margin-top: 16px;
     margin-top: 10px; /* Отступ сверху */
 }
 
-.contacts-list {
-    margin-top: 2px; /* Отступ сверху между линией и контактами */
-}
 
 .contact {
     display: flex;
@@ -271,6 +268,12 @@ margin-top: 16px;
     border-bottom: 1px solid #F2F0F0;
     text-decoration: none; /* Убираем стилизацию ссылок */
     color: #000; /* Цвет текста контакта */
+}
+
+.active-contact {
+  background-color: #f0f0f0; /* Измените цвет фона для активного состояния */
+  color: #000; /* Измените цвет текста для активного состояния */
+  /* Добавьте любые другие стили для активного состояния */
 }
 
 .avatar {
@@ -330,7 +333,7 @@ margin-top: 16px;
 
 .chat-window {
   padding: 10px;
-  margin-bottom: 400px; /* Отступ снизу для ввода сообщения */
+  margin-bottom: 100%; /* Отступ снизу для ввода сообщения */
 }
 
 .message {
@@ -359,6 +362,10 @@ margin-top: 16px;
 }
 .outgoing .message-content {
   margin-left: 8px; /* Добавляем отступ при входящем сообщении */
+}
+
+.message-input-hidden {
+  display: none;
 }
 
 .message-input {
