@@ -133,12 +133,12 @@ $result = $conn->query($sqlGetEquipments);
 </header>
 <div class="header-content">
     <div class="second-panel">
-        <div class="panel-item">
+        <div class="panel-item" style="border-radius: 30px 0 0 30px; background:#FFF">
             <a href="./products.php" style="text-decoration: none;">
                 <span>Продукты</span>
             </a>
         </div>
-        <div class="panel-item" id="kanban">
+        <div class="panel-item" id="kanban" style="background:#FFF">
             <a href="./models.php" style="text-decoration: none;">
                 <span>Модели</span>
             </a>
@@ -148,7 +148,7 @@ $result = $conn->query($sqlGetEquipments);
                 <span>Конфигурация</span>
             </div>
         </div>
-        <div class="panel-item" id="gant">
+        <div class="panel-item" id="gant" style="border-radius: 0 30px 30px 0; background:#FFF" >
             <a href="./equipment.php" style="text-decoration: none;">
                 <span>Оборудование</span>
             </a>

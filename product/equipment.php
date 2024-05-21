@@ -70,7 +70,7 @@ $result = $conn->query($sqlGetEquipments);
 <body>
 <header>
     <div class="header-container">
-        <div class="nav-item">
+        <div class="nav-item" >
             <a href="../Tasks.php" class="rectangle-9 client" style="text-decoration: none;">
                 <img src="../IMG/image-70.svg" alt="Задачи" width="30" height="30"/>
                 <span class="nav-text">Задачи</span>
@@ -106,17 +106,17 @@ $result = $conn->query($sqlGetEquipments);
 </header>
 <div class="header-content">
     <div class="second-panel">
-        <div class="panel-item">
+        <div class="panel-item" style="border-radius: 30px 0 0 30px; background:#FFF">
             <a href="./products.php" style="text-decoration: none;">
                 <span>Продукты</span>
             </a>
         </div>
-        <div class="panel-item" id="kanban">
+        <div class="panel-item" id="kanban" style="background:#FFF">
             <a href="./models.php" style="text-decoration: none;">
                 <span>Модели</span>
             </a>
         </div>
-        <div class="panel-item" id="calendar">
+        <div class="panel-item" id="calendar" style="background:#FFF">
             <a href="./configuration.php" style="text-decoration: none;">
                 <span>Конфигурация</span>
             </a>

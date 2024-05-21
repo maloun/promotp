@@ -250,17 +250,17 @@ $result = $conn->query($sqlGetProducts);
                 <span>Продукты</span>
             </div>
         </div>
-        <div class="panel-item" id="kanban">
+        <div class="panel-item" id="kanban" style="background:#FFF">
             <a href="./models.php" style="text-decoration: none;">
                 <span>Модели</span>
             </a>
         </div>
-        <div class="panel-item" id="calendar">
+        <div class="panel-item" id="calendar" style="background:#FFF">
             <a href="./configuration.php" style="text-decoration: none;">
                 <span>Конфигурация</span>
             </a>
         </div>
-        <div class="panel-item" id="gant">
+        <div class="panel-item" id="gant" style="border-radius: 0 30px 30px 0; background:#FFF">
             <a href="./equipment.php" style="text-decoration: none;">
                 <span>Оборудование</span>
             </a>

@@ -31,7 +31,7 @@
             </div>
             <div class="nav-item">
                 <a href="product/products.php" class="rectangle-9 chat" style="text-decoration: none;">
-                    <img src="IMG/image30.svg" alt="Чаты" width="28" height="24" />
+                    <img src="IMG/image30.png" alt="Чаты" width="28" height="24" />
                     <span class="nav-text">Продукты</span>
                 </a>
             </div>

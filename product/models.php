@@ -191,22 +191,22 @@ $result = $conn->query($sqlGetModels);
 </header>
 <div class="header-content">
     <div class="second-panel">
-        <div class="panel-item">
+        <div class="panel-item" style="border-radius: 30px 0 0 30px; background:#FFF">
             <a href="./products.php" style="text-decoration: none;">
                 <span>Продукты</span>
             </a>
         </div>
-        <div class="panel-item active" style="border-radius: 0" id="kanban">
+        <div class="panel-item active" style=" border-radius:0;" id="kanban">
             <div style="text-decoration: none">
                 <span>Модели</span>
             </div>
         </div>
-        <div class="panel-item" id="calendar">
+        <div class="panel-item" id="calendar" style="background:#FFF">
             <a href="./configuration.php" style="text-decoration: none;">
                 <span>Конфигурация</span>
             </a>
         </div>
-        <div class="panel-item" id="gant">
+        <div class="panel-item" id="gant" style="border-radius: 0 30px 30px 0; background:#FFF">
             <a href="./equipment.php" style="text-decoration: none;">
                 <span>Оборудование</span>
             </a>
