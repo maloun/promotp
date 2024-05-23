@@ -237,18 +237,16 @@ body {
 .dropdown {
     position: relative;
     display: inline-block;
-   
 }
 
 .dropdown-content {
-
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 150px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     z-index: 1;
-    left: 180px;
-    top: 260px; /* Изменено для лучшей видимости */
+    left: 185px;
+    top: 232px; /* Изменено для лучшей видимости */
 }
 
 .dropdown-content select {

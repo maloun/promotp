@@ -62,6 +62,7 @@ try {
     }
 } finally {
     
+    header("Location: https://promotp.ru/pages/auth.html?auth=failed");
     if (isset($conn)) {
         $conn->close();
     }

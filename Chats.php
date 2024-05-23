@@ -26,7 +26,7 @@
             <div class="nav-item active">
                 <div class="rectangle-9 chat">
                     <img src="IMG/image-90active.svg" alt="Чаты" width="28" height="24" />
-                    <span class="nav-text">Чаты</span>
+                    <span class="nav-text" style="color: #5FC3D0;">Чаты</span>
                 </div>
             </div>
             <div class="nav-item">

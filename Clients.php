@@ -228,6 +228,7 @@ $result = $conn->query($sql);
     // Закрытие модального окна для добавления клиента
     function closeAddClientModal() {
         document.getElementById('addClientModal').style.display = 'none';
+        document.getElementById('myModal').style.display = 'none';
     }
 
     // Добавление клиента
@@ -256,8 +257,9 @@ $result = $conn->query($sql);
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 // Обработка ответа сервера
-                alert(this.responseText); // Вывод сообщения об успешном добавлении или ошибке
+                closeModal();
                 closeAddClientModal(); // Закрываем модальное окно после добавления
+                alert(this.responseText); // Вывод сообщения об успешном добавлении или ошибке
                 // Добавьте здесь код для обновления списка клиентов, если необходимо
             }
         };
@@ -266,6 +268,7 @@ $result = $conn->query($sql);
         xmlhttp.send("first_name=" + first_name + "&middle_name=" + middle_name + "&last_name=" + last_name +
             "&company_name=" + company_name + "&contact_phone=" + contact_phone +
             "&c_email=" + email + "&c_inn=" + inn);
+
     }
 
 </script>
@@ -317,6 +320,7 @@ $result = $conn->query($sql);
         xmlhttp.open("POST", "updateClientData.php", true);
         xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xmlhttp.send("company=" + company + "&contact=" + contact + "&phone=" + phone + "&email=" + email + "&inn=" + inn);
+        closeAddClientModal();
     });
 </script>
 <script>
