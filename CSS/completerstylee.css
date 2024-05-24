@@ -127,15 +127,13 @@ body {
 }
 
 .email-text {
-    flex: 1;
-    margin-bottom: 10px;
     padding: 10px;
     font-family: 'Inter', sans-serif;
     font-size: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    resize: none; /* Запрещаем изменение размера */
-
+    height: 400px;
+    /*resize: none; /* Запрещаем изменение размера */
 }
 
 .editor-buttons {
@@ -181,9 +179,9 @@ body {
   }
   .pencil-icon
   {
-    position: absolute;
-    left: 270px;
-    top: 21px;
+    position: relative;
+    left: -1px;
+    top: -1px;
   }
   .Tasks
   {
@@ -199,8 +197,18 @@ body {
 }
 .Description {
     position: absolute;
-    right: 535px;
+    left: 375px;
+    margin-left: -20px;
     top: 50px;
+}
+
+.Description-text {
+    position: absolute;
+    left: 375px;
+    top: 80px;
+    width: 550px;
+    height: 100px;
+    display:none;
 
 }
 
@@ -214,8 +222,7 @@ body {
 .taskNameOutput
 {
     position: absolute;
-    right: 452px;
-    
+    left: 375px;
 }
 .CommentsHistory
 {

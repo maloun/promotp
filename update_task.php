@@ -5,9 +5,12 @@ if (isset($_GET['task_id']) && isset($_GET['status']) && isset($_GET['mark'])) {
     $task_id = $_GET['task_id'];
     $status = $_GET['status'];
     $mark = $_GET['mark'];
+    $desc_str = "";
+    if (isset($_GET['description']))
+        $desc_str = ", description = '". $_GET['description'] . "' ";
 
     // Обновление статуса и метки задачи
-    $update_query = "UPDATE issues SET id_status = $status, id_mark = $mark WHERE id_issue = $task_id";
+    $update_query = "UPDATE issues SET id_status = $status, id_mark = $mark " . $desc_str . " WHERE id_issue = $task_id";
     if ($conn->query($update_query) === TRUE) {
         // Установка часового пояса Екатеринбурга
         date_default_timezone_set('Asia/Yekaterinburg');
@@ -25,7 +28,7 @@ if (isset($_GET['task_id']) && isset($_GET['status']) && isset($_GET['mark'])) {
             $time_update_query = "UPDATE issues SET completion_time = '$current_time' WHERE id_issue = $task_id AND completion_time IS NULL";
             $conn->query($time_update_query);
         }
-        echo "Статус и метка обновлены успешно.";
+        echo "Задача успешно обновлена.";
     } else {
         echo "Ошибка при обновлении статуса и метки: " . $conn->error;
     }
